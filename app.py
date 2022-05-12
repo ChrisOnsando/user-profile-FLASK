@@ -67,6 +67,7 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField('Login')
 
+# Routes
 
 @app.route('/')
 def home():
@@ -84,7 +85,6 @@ def login():
                 return redirect(url_for('dashboard'))
     return render_template('login.html', form=form)
 
-# routes
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
